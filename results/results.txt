@@ -1,0 +1,150 @@
+Clustering: processed_Twitter_Trump_Clinton_2016-11-08.csv
+Eps:  0.0335139493346 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-08.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-18.csv
+Eps:  0.0331087450683 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-18.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-12.csv
+Eps:  0.0328814020382 
+Min Sample:  32
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-12.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-26.csv
+Eps:  0.033757573965 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-26.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-24.csv
+Eps:  0.033950017673 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-24.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-16.csv
+Eps:  0.0334239210746 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-16.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-21.csv
+Eps:  0.03264 
+Min Sample:  32
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-21.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-31.csv
+Eps:  0.0338098742973 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-31.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-03.csv
+Eps:  0.0341625321076 
+Min Sample:  34
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-03.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-09.csv
+Eps:  0.0336637980626 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-09.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-05.csv
+Eps:  0.0333940189256 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-05.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-20.csv
+Eps:  0.0338381515453 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-20.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-19.csv
+Eps:  0.033763252213 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-19.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-02.csv
+Eps:  0.0347726127865 
+Min Sample:  34
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-02.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-25.csv
+Eps:  0.0330743601601 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-25.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-30.csv
+Eps:  0.0332529126544 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-30.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-29.csv
+Eps:  0.0333179606219 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-29.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-01.csv
+Eps:  0.0352142698348 
+Min Sample:  35
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-01.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-17.csv
+Eps:  0.034279388851 
+Min Sample:  34
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-17.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-06.csv
+Eps:  0.0337348380758 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-06.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-04.csv
+Eps:  0.0339584231083 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-04.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-23.csv
+Eps:  0.0334480328271 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-23.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-13.csv
+Eps:  0.03361 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-13.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-07.csv
+Eps:  0.0349014269049 
+Min Sample:  34
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-07.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-11.csv
+Eps:  0.0335117710663 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-11.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-28.csv
+Eps:  0.0338639291873 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-28.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-22.csv
+Eps:  0.0332969443042 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-22.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-10.csv
+Eps:  0.033751214793 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-10.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-10-27.csv
+Eps:  0.0336632098885 
+Min Sample:  33
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-10-27.csv 
+
+Clustering: processed_Twitter_Trump_Clinton_2016-11-14.csv
+Eps:  0.0327151417542 
+Min Sample:  32
+Clustered File: clustered_processed_Twitter_Trump_Clinton_2016-11-14.csv 
+
