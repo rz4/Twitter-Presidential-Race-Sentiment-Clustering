@@ -68,3 +68,20 @@ tapply(data$Cluster,data$Cluster,length)
 ```
 
 ## Analysis
+The following is used to see how events in the presedential race influenced twitter behavior.
+The graph shows the number of tweets per day from the data.
+
+```{r view number of tweets per day, verbose=FALSE}
+lengths_ = c()
+filenames_ = c()
+files <- list.files(path=path_to_data, pattern="*.csv", full.names=T, recursive=FALSE)
+lapply(files, function(x){
+  assign("lengths_", c(lengths_, length(readLines(x))), envir = .GlobalEnv)
+  assign("filenames_", c(filenames_, substr(basename(x), nchar(basename(x)) - 13, nchar(basename(x)) - 4)), envir = .GlobalEnv)
+})
+df = data.frame(filenames_, lengths_)
+colnames(data)[1] = 'Filename'
+colnames(data)[2] = 'Num_of_Tweets'
+ggplot(data=df, aes(x=df$filenames_, y=df$lengths_)) + geom_bar(stat="identity") + labs(title="Tweets Per Day, 10/16/16 - 11/14/16", x="Dates", y="Number of Tweets")+ theme(axis.text.x = element_text(angle = 90, hjust = 1))
+
+```
