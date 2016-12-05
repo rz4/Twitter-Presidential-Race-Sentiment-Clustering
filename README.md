@@ -4,15 +4,15 @@
 
 Last Updated: **December 4, 2016**
 
-Lead Maintainer: [Rafael Zamora](https://github.com/rz4), [Justin Murphey](https://github.com/KingMurphey)
+Lead Maintainers: [Rafael Zamora](https://github.com/rz4), [Justin Murphey](https://github.com/KingMurphy)
 
 ## Overview
-Our goal is to analyze Twitter data from the 2016 United States presidential race.
-We hope to find different classes of tweets by applying clustering techniques on the
+The goal of this project is to analyze Twitter data from the 2016 United States presidential race.
+We hope to discover classes of tweets by applying clustering techniques on the
 sentiment of the tweets and how much they reference either the Republican or Democrat
-candidate. These clusters and their sizes will then be used to analyze the
-change in sentiment over the last few weeks of the election. We hope to see how
-specific events during the race influence Twitters sentiment of either candidate.
+candidates. The generated clusters and their sizes will then be used to analyze the
+tweeting behavior over the last few weeks of the election. We hope to see how
+specific events during the race influence Twitter's sentiment towards either candidate.
 
 Data was gathered from 3 weeks prior to the election and 1 week after the election.The data was pulled from Twitter using Python with the following parameters:
 
@@ -36,6 +36,7 @@ The following is an example of a tweet and the values produced through processin
 
 *-1 = Trump, 1 = Clinton
 
+SciKitLearn's **Birch Clustering** algorithm was used to cluster the processed data.
 The following are graph examples of processed and clustered data:
 
 ![Processed Data Graph Example](doc/figures/processed_Twitter_Trump_Clinton_2016-11-08.png)
@@ -53,7 +54,7 @@ Requires the following Python Packages:
 
 - [GOT3](https://github.com/Jefferson-Henrique/GetOldTweets-python) (modified version is included in [/src/](src))
 - [TextBlob](https://pypi.python.org/pypi/textblob)
-
+- [scikit-learn](https://pypi.python.org/pypi/scikit-learn/0.18.1)
 
 #### Setup and Installation:
 
@@ -68,10 +69,10 @@ are short descriptions of each script:
 - [GraphTwitterData.R](src/GraphTwitterData.R) - Used to export PNG graphs of processed and clustered data
 
 The [/doc/](doc) folder contains an R [Notebook](doc/Notebook.Rmd) used for analyzing
-data and results. It also contains [/figures/](doc/figures) of all processed and
+data and results. It also contains [/figures/](doc/figures) folder which includes graphs of all processed and
 clustered data.
 
-The [/data/](data) folder contains preprocessed and processed Twitter data while the
+The [/data/](data) folder contains pre-processed and processed Twitter data while the
 final clustered data can be found in the [results](/results/) folder.
 
 Cluster sizes and centroid coordinates can be found in
