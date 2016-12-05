@@ -1,9 +1,11 @@
 '''
 Twitter_Presidential_Race_Sentiment_Clustering: ProcessTwitterData.py
 Authors: Justin Murphey, Rafael Zamora
-Last Updated: 11/27/16
+Last Updated: 12/04/16
 
 CHANGE-LOG:
+-Code Review/Refactoring
+-Updated Comments
 
 '''
 
@@ -20,7 +22,7 @@ from textblob.sentiments import NaiveBayesAnalyzer
 from difflib import SequenceMatcher
 from multiprocessing import Pool
 
-path_to_data = "/home/rz4/Workspaces/Python/CS498E/Twitter_Presidential_Race_Sentiment_Clustering/data/"
+path_to_data = "/Twitter_Presidential_Race_Sentiment_Clustering/data/"
 
 def process_tweet_data(tweets_data):
     '''
@@ -43,7 +45,6 @@ def process_tweet_data(tweets_data):
         tweet_text = tweet_text.replace("@", "")
         tweet_text = tweet_text.replace("#", "")
         tweet_text = tweet_text.replace("'", "")
-        #print(tweet_text)
 
         tweet_text_blob = TextBlob(tweet_text, analyzer=analyzer_NB)
         tweet_polarity = (tweet_text_blob.sentiment.p_pos*2.0) - 1.0
@@ -52,7 +53,6 @@ def process_tweet_data(tweets_data):
         raw_ref_hil_datalist.append(tweet_ref_hil)
         raw_ref_tru_datalist.append(tweet_ref_tru)
         polarity_datalist.append(tweet_polarity)
-        #print(tweet_polarity,tweet_ref_hil, tweet_ref_tru, tweet_ref_hil - tweet_ref_tru)
 
     max_value_hil = max(raw_ref_hil_datalist)
     max_value_tru = max(raw_ref_tru_datalist)
@@ -82,7 +82,9 @@ def max_noun_phrase_similarity(text, keywords):
 
 if __name__ == '__main__':
     ''''
-    Parameters
+    Parameters:
+    parallel -set True to run distributed processing
+    cores -number of cores used for distributed processing
 
     ''''
     parallel = False
@@ -92,11 +94,10 @@ if __name__ == '__main__':
     Process all raw data files in data directory.
 
     '''
-    for filename in os.listdir(path_to_data+"raw/"):
+    for filename in sorted(os.listdir(path_to_data+"raw/")):
         tweets_data = []
         print("Processing: "+ filename)
         with open(path_to_data + filename, "r") as f: tweets_data = f.readlines()
-        print(len(tweets_data), " Tweets")
 
         if parallel:
             tweets_data_parts = np.array_split(np.array(tweets_data),cores)

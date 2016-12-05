@@ -1,36 +1,35 @@
 """
 Twitter_Presidential_Race_Sentiment_Clustering: ClusterTwitterData.py
 Authors: Justin Murphey, Rafael Zamora
-Last Updated: 11/27/16
+Last Updated: 12/04/16
 
 CHANGE-LOG:
+-Code Review/Refactoring
+-Updated Comments
 
 """
 
 '''
-This script is used to preform DBSCAN clustering on the processed data set generated from
+This script is used to preform Birch clustering on the processed data set generated from
 data gathered from Twitter.
 
 '''
-import os
+import os, collections
 import numpy as np
-import matplotlib.pyplot as plt
-from sklearn.neighbors import NearestNeighbors
 from sklearn import cluster
 
-path_to_data = "/home/rz4/Workspaces/Python/CS498E/Twitter_Presidential_Race_Sentiment_Clustering/data/"
-path_to_results = "/home/rz4/Workspaces/Python/CS498E/Twitter_Presidential_Race_Sentiment_Clustering/results/"
+path_to_data = "/Twitter_Presidential_Race_Sentiment_Clustering/data/"
+path_to_results = "/Twitter_Presidential_Race_Sentiment_Clustering/results/"
 
 if __name__ == '__main__':
     '''
     Parameters
-
+    seed - for np.random
     '''
-    np.random.seed(1536488)
-    k_values = [7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7,7]
+    seed = 1536488
+    np.random.seed(seed)
 
-    i = 0
-    for filename in os.listdir(path_to_data+"processed/"):
+    for filename in sorted(os.listdir(path_to_data+"processed/")):
         print("Clustering: "+ filename)
         '''
         Reads processed data and gets random sample.
@@ -41,24 +40,17 @@ if __name__ == '__main__':
         sample = data[np.random.randint(len(data),size=sample_size),:]
 
         '''
-        Calculates eps and min_sample for clustering using k_nearest_neighbor.
+        Preforms Birch clustering and writes results to file.
 
         '''
-        k = k_values[i]
-        nbrs = NearestNeighbors(n_neighbors=k, algorithm='ball_tree').fit(sample)
-        distances, indices = nbrs.kneighbors(sample)
-        sorted_distances = [i[k-1] for i in sorted(distances, key=lambda dis: dis[k-1])]
-        calc_eps = sorted_distances[int(.90*sample_size)]
-        calc_min_sample = int(calc_eps*(np.power(10,(np.log10(sample_size)-1))))
-        print("Eps: ", calc_eps, "\nMin Sample: ", calc_min_sample)
-
-        '''
-        Preforms DBSCAN clustering and writes results to file.
-
-        '''
-        db = cluster.DBSCAN(eps=calc_eps, min_samples=calc_min_sample).fit(sample)
-        labels = db.labels_
+        birch = cluster.Birch(branching_factor=5, n_clusters=None, threshold=0.25, compute_labels=True).fit(sample)
+        labels = birch.labels_
         sample = np.c_[sample, labels]
         os.makedirs(os.path.dirname(path_to_results+"clustered_"+filename), exist_ok=True)
         np.savetxt(path_to_results+"clustered_"+filename, sample, fmt='%.5f', delimiter=",")
-        print("Clustered File: clustered_"+filename,"\n")
+        counts = collections.Counter(labels)
+        centroids = birch.subcluster_centers_
+        print("Clusters: label, X, Y, Size\n")
+        for i in counts.most_common(len(counts)):
+            print(i[0], " , ", centroids[i[0]][1], " , ", centroids[i[0]][0], " , ", counts[i[0]] )
+        print("\nClustered File: clustered_"+filename,"\n")
