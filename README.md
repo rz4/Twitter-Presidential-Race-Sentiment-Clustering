@@ -7,12 +7,12 @@ Last Updated: **December 4, 2016**
 Lead Maintainers: [Rafael Zamora](https://github.com/rz4), [Justin Murphey](https://github.com/KingMurphy)
 
 ## Overview
-The goal of this project is to analyze Twitter data from the 2016 United States presidential race.
-We hope to discover classes of tweets by applying clustering techniques on the
-sentiment of the tweets and how much they reference either the Republican or Democrat
-candidates. The generated clusters and their sizes will then be used to analyze the
+The goal of this project is to analyze Twitter data related to the 2016 United States presidential race.
+We hope to discover classes of tweets by applying clustering techniques on two particular data points: the
+sentiment of tweets and how much they reference either the Republican or Democrat
+candidates. The clusters will then be used to analyze
 tweeting behavior over the last few weeks of the election. We hope to see how
-specific events during the race influence Twitter's sentiment towards either candidate.
+specific events during the race influenced Twitter's sentiment towards either candidate.
 
 Data was gathered from 3 weeks prior to the election and 1 week after the election.The data was pulled from Twitter using Python with the following parameters:
 
