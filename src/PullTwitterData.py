@@ -29,31 +29,29 @@ from multiprocessing import Pool
 path_to_data = "/Twitter_Presidential_Race_Sentiment_Clustering/data/"
 filename_ = "Twitter_Trump_Clinton"
 
-def pull_tweets(args):
+def pull_tweets(args_list):
     '''
     pull_tweets() uses 'args' to run got3 tweet pull and saves the tweet data
     to a CSV file. 'args': [date_obj, keywords, lang, pull_size]
 
     '''
-    date_obj, keywords, lang, pull_size = args
-    start_date =  date_obj.strftime("%Y-%m-%d")
-    end_date = (date_obj + datetime.timedelta(days=1)).strftime("%Y-%m-%d")
-    filename = filename_ + "_" + start_date + ".csv"
+    for args in args_list:
+        date_obj, keywords, lang, pull_size = args
+        start_date =  date_obj.strftime("%Y-%m-%d")
+        end_date = (date_obj + datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+        filename = filename_ + "_" + start_date + ".csv"
 
-    print("Pulling Twitter Data from: " + start_date)
-    tweetCriteria = got3.manager.TweetCriteria().setLang(lang).setQuerySearch(keywords).setSince(start_date).setUntil(end_date).setMaxTweets(pull_size)
-    results = got3.manager.TweetManager.getTweets(tweetCriteria)
-    os.makedirs(os.path.dirname(path_to_data+"raw/"+filename), exist_ok=True)
-    with open(path_to_data+"raw/"+filename, "w") as f:
-        for tweet in results:
-            tweet_text = tweet.text
-            tweet_date = str(tweet.date)
-            tweet_usr_id = str(tweet.author_id)
-            f.write(tweet_usr_id + "," + tweet_date + "," + tweet_text + "\n")
-    print("\nTweets: " , len(results), "\nFirst Tweet Date: ", results[0].date, "\nLast Tweet Date: ", results[-1].date)
-
-def pull_parallel_tweets(args_list):
-    for args in args_list: pull_tweets(args)
+        print("Pulling Twitter Data from: " + start_date)
+        tweetCriteria = got3.manager.TweetCriteria().setLang(lang).setQuerySearch(keywords).setSince(start_date).setUntil(end_date).setMaxTweets(pull_size)
+        results = got3.manager.TweetManager.getTweets(tweetCriteria)
+        os.makedirs(os.path.dirname(path_to_data+"raw/"+filename), exist_ok=True)
+        with open(path_to_data+"raw/"+filename, "w") as f:
+            for tweet in results:
+                tweet_text = tweet.text
+                tweet_date = str(tweet.date)
+                tweet_usr_id = str(tweet.author_id)
+                f.write(tweet_usr_id + "," + tweet_date + "," + tweet_text + "\n")
+        print("\nTweets: " , len(results), "\nFirst Tweet Date: ", results[0].date, "\nLast Tweet Date: ", results[-1].date)
 
 if __name__ == '__main__':
     '''
@@ -94,5 +92,5 @@ if __name__ == '__main__':
     if parallel:
         args_list_parts = [args_list[i::cores] for i in range(cores)]
         with Pool() as pool:
-            pool.map(pull_parallel_tweets, args_list_parts)
-    else: pull_parallel_tweets(args_list)
+            pool.map(pull_tweets, args_list_parts)
+    else: pull_tweets(args_list)
