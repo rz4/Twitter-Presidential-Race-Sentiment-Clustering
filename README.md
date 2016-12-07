@@ -78,6 +78,8 @@ final clustered data can be found in the [results](/results/) folder.
 Cluster sizes and centroid coordinates can be found in
 [results.txt](results/results.txt)
 
+Graph of the total number of Tweets per day can be found in [TweetsPerDay.png](results/TweetsPerDay.png)
+
 
 ## License
 
