@@ -4,7 +4,7 @@
 
 Last Updated: **December 4, 2016**
 
-Lead Maintainers: [Rafael Zamora](https://github.com/rz4), [Justin Murphey](https://github.com/KingMurphy)
+Lead Maintainers: [Rafael Zamora](https://github.com/rz4), [Justin Murphy](https://github.com/KingMurphy)
 
 ## Overview
 The goal of this project is to analyze Twitter data related to the 2016 United States presidential race.
