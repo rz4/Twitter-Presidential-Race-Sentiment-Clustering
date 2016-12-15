@@ -18,8 +18,12 @@ lapply(files, function(x){
   data = read.csv(file=x, head=FALSE, sep=",")
   colnames(data)[1] = 'Sentiment'
   colnames(data)[2] = 'Candidate_Value'
-  p = ggplot(data, aes(x=Candidate_Value, y=Sentiment)) + geom_point(size=I(.3))
+  centroid = data.frame(c(mean(data_[[1]])),c(mean(data_[[2]])))
+  colnames(centroid)[1] = 'Sentiment'
+  colnames(centroid)[2] = 'Candidate_Value'
+  p = ggplot(data_, aes(x=Candidate_Value, y=Sentiment)) + geom_point(size=I(.3))
   p = p + labs(title=basename(x), x ="Candidate_Value", y = "Sentiment") + coord_cartesian(xlim = c(-1,1),ylim = c(-1,1))
+  p = p + geom_point(data=centroid, aes(color="Centroid"), size=5) + theme(legend.position="none")
   ggsave(filename=paste(path_to_figures, png_filename,sep=""), plot=p, width=11, height=8.5, units='in')
 })
 
